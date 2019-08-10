@@ -5,14 +5,4 @@
     <url>%2F2019%2F08%2F10%2F%E6%96%B0%E5%BC%80%E5%A7%8B%2F</url>
     <content type="text"><![CDATA[我愿乘风破浪]]></content>
   </entry>
-  <entry>
-    <title><![CDATA[Hello World����]]></title>
-    <url>%2F2019%2F08%2F09%2Flll%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start����һ����ʼCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World汉字]]></title>
-    <url>%2F2019%2F08%2F04%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start这是一个开始Create a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
 </search>
