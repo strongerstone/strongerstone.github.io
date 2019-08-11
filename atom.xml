@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>张一方的个人博客</title>
   
-  <subtitle>充实自己的一种方式</subtitle>
+  <subtitle>韶华有尽，行者无疆</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-11T10:55:38.309Z</updated>
+  <updated>2019-08-11T10:59:00.827Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/08/11/%E6%B8%B2%E6%9F%93/"/>
     <id>http://yoursite.com/2019/08/11/渲染/</id>
     <published>2019-08-11T08:52:32.000Z</published>
-    <updated>2019-08-11T10:55:38.309Z</updated>
+    <updated>2019-08-11T10:59:00.827Z</updated>
     
     <summary type="html">
     
