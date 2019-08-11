@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[渲染]]></title>
+    <title><![CDATA[渲染的书写方式]]></title>
     <url>%2F2019%2F08%2F11%2F%E6%B8%B2%E6%9F%93%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[#这个是一个大标题 ##这是一个小标题 ###这是小小标题正文这里是斜体 这里是粗体 #粗写的大标题粗写的大标题显然失败了 1printf &quot;Hello world&quot;; 这是代码的书写方式，注意要用tab键实现缩进代码 这两种方式都可以做出分割线 我是第一行 我是第二行用-或*就可以写出无顺序的分点要注意-和星后要有一个空格 有序的分点 第一点 第二点 第三点 据说这是引用格式，不过应该可以用在别的地方 注意中间要有一个空格 插入图片 有趣的灵魂万里挑一 朋友的bloglin \这个是转义字符如*这就不是斜体了* 快捷键 （看到这个才知道好像之前的都白看了） ctrl+1 一级标题 ctrl+2 二级标题 ctrl+u 无序列表 ctrl+g 插入图片 ctrl+l 插入超链接 Ctrl+B 粗体 Ctrl+I 斜体 Ctrl+Q 引用 Ctrl+K 代码块]]></content>
   </entry>
   <entry>
     <title><![CDATA[新开始]]></title>
