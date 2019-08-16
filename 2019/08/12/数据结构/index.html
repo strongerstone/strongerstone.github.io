@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="出于效率低下以及不认真的态度的问题，我大一下学期的数据结构与算法分析挂掉了。但我并不想只是应付补考。于是我打算用八个上午学习这个东西。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-15T12:27:35.769Z">
+<meta property="og:updated_time" content="2019-08-16T03:42:03.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构">
 <meta name="twitter:description" content="出于效率低下以及不认真的态度的问题，我大一下学期的数据结构与算法分析挂掉了。但我并不想只是应付补考。于是我打算用八个上午学习这个东西。">
@@ -415,12 +415,54 @@ return OK;
 <p>线性表的单链表储存结构</p>
 <pre><code>typedef struct Node
 {
-    Elemtype data;
-    struct Node *next;
+    Elemtype data;//数据域
+    struct Node *next;//指针域
 } Node;
 typedef struct Node *LinkList;//定义LinkList</code></pre><p>结点Node的结构由存放数据的数据域和存放后继地点指针的指针组成。</p>
-<p>*<em>假设p是第  *</em></p>
-
+<p>*<em>假设p是指向第i个结点的指针那么ai的数据域就可以用p-&gt;data来表示，p-&gt;data的值是一个数据元素，此时ai的指针域便是p-&gt;next,p-&gt;next是一个指针默认指向i+1个元素  *</em></p>
+<h2 id="单链表的操作"><a href="#单链表的操作" class="headerlink" title="单链表的操作"></a>单链表的操作</h2><p>对于单链表的GetElem 获得链表的第一个数据较麻烦。</p>
+<pre><code>Status GetElem (LinkList L,int i,ElemType *e)//用e返回L中第i个数值。
+{
+    int j;
+    LinkList p;//定义指针p
+    p=L-&gt;next;//让p指向链表上头节点
+    j=1;//计数器
+    while(p &amp;&amp; j&lt;i)//因为结尾指针是空所以到指针空停止，还有到数停止。
+    {
+        p=p-&gt;next
+        ++j;
+    }
+    if(!p  || j&gt;i)
+        return ERROR;
+    *e=p-&gt;data;
+return OK;
+}</code></pre><p>这个相比于顺序较难但插入和删除容易</p>
+<pre><code>Status GetInsert (LinkList L,int i,ElemType e)//L中第i个数值前加入数值e。
+{
+    int j;
+    LinkList p,s;//定义指针p
+    p=*L;//可以理解为变量p用于l储存地址
+    j=1;
+    while(p &amp;&amp; j &lt; 1 )
+    {
+        p-p-&gt;next;
+        ++j;
+    }
+    if(!p || i&gt;j)//结点p不存在
+        return ERROR；
+    s = (Linklist) malloc (sizeof (Node) );// 生成新结点
+    s-&gt;data=e;
+    //以下是经典三步
+    s-&gt;next=p-&gt;next;
+    p-&gt;next=s;![](https://i.imgur.com/GiqdXKk.jpg)
+    return OK;
+}</code></pre><p>删除就一句p-&gt;next=p-&gt;next-&gt;next<br>q是要删除的结点<br>    q=p-&gt;next;<br>    p-&gt;next=q-&gt;next;<br>    free(q);</p>
+<p>整表创建<br>```<br>    void CreateListHead(LinkList *L, int n )<br>    LinkList p;<br>    int i;<br>    *L= (LinkList)malloc(sizeof（Node）);</p>
+<h2 id="链表知识总结"><a href="#链表知识总结" class="headerlink" title="链表知识总结"></a>链表知识总结</h2><ul>
+<li>如果要进行频繁查找要用顺序储存结构，而频繁进行插入删除就用链式。</li>
+<li>当不知道到底有多少元素是一定要用链表。</li>
+</ul>
+<h2 id="多种链表"><a href="#多种链表" class="headerlink" title="多种链表"></a>多种链表</h2><h3 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h3>
       
     </div>
     
@@ -579,7 +621,7 @@ typedef struct Node *LinkList;//定义LinkList</code></pre><p>结点Node的结�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个上午"><span class="nav-number">1.</span> <span class="nav-text">第一个上午</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构的概念"><span class="nav-number">1.1.</span> <span class="nav-text">数据结构的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据元素"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据项"><span class="nav-number">1.1.4.</span> <span class="nav-text">数据项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑结构"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#储存结构"><span class="nav-number">1.3.</span> <span class="nav-text">储存结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象数据类型"><span class="nav-number">1.4.</span> <span class="nav-text">抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.5.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的特性"><span class="nav-number">1.5.1.</span> <span class="nav-text">算法的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法设计的要求，以及我之后代码的写作自我要求"><span class="nav-number">1.5.2.</span> <span class="nav-text">算法设计的要求，以及我之后代码的写作自我要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的计算量"><span class="nav-number">1.5.3.</span> <span class="nav-text">算法的计算量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二个上午"><span class="nav-number">2.</span> <span class="nav-text">第二个上午</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表"><span class="nav-number">2.1.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于定义"><span class="nav-number">2.1.1.</span> <span class="nav-text">关于定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表的抽象数据类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">线性表的抽象数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性储存结构的优缺点"><span class="nav-number">2.1.3.</span> <span class="nav-text">线性储存结构的优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式储存结构"><span class="nav-number">2.2.</span> <span class="nav-text">线性表链式储存结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三天"><span class="nav-number">3.</span> <span class="nav-text">第三天</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个上午"><span class="nav-number">1.</span> <span class="nav-text">第一个上午</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构的概念"><span class="nav-number">1.1.</span> <span class="nav-text">数据结构的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据元素"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据项"><span class="nav-number">1.1.4.</span> <span class="nav-text">数据项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑结构"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#储存结构"><span class="nav-number">1.3.</span> <span class="nav-text">储存结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象数据类型"><span class="nav-number">1.4.</span> <span class="nav-text">抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.5.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的特性"><span class="nav-number">1.5.1.</span> <span class="nav-text">算法的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法设计的要求，以及我之后代码的写作自我要求"><span class="nav-number">1.5.2.</span> <span class="nav-text">算法设计的要求，以及我之后代码的写作自我要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的计算量"><span class="nav-number">1.5.3.</span> <span class="nav-text">算法的计算量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二个上午"><span class="nav-number">2.</span> <span class="nav-text">第二个上午</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表"><span class="nav-number">2.1.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于定义"><span class="nav-number">2.1.1.</span> <span class="nav-text">关于定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表的抽象数据类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">线性表的抽象数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性储存结构的优缺点"><span class="nav-number">2.1.3.</span> <span class="nav-text">线性储存结构的优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性表链式储存结构"><span class="nav-number">2.2.</span> <span class="nav-text">线性表链式储存结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三天"><span class="nav-number">3.</span> <span class="nav-text">第三天</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的操作"><span class="nav-number">3.1.</span> <span class="nav-text">单链表的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表知识总结"><span class="nav-number">3.2.</span> <span class="nav-text">链表知识总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多种链表"><span class="nav-number">3.3.</span> <span class="nav-text">多种链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态链表"><span class="nav-number">3.3.1.</span> <span class="nav-text">静态链表</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
