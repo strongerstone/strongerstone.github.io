@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="心之所向，无往不至。">
+<meta name="description" content="我blog的笑容由我来守护">
 <meta property="og:type" content="article">
 <meta property="og:title" content="blog的维护">
 <meta property="og:url" content="http://yoursite.com/2019/08/17/blog的维护/index.html">
 <meta property="og:site_name" content="张一方的个人博客">
-<meta property="og:description" content="心之所向，无往不至。">
+<meta property="og:description" content="我blog的笑容由我来守护">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T07:38:39.113Z">
+<meta property="og:updated_time" content="2019-08-17T08:24:11.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="blog的维护">
-<meta name="twitter:description" content="心之所向，无往不至。">
+<meta name="twitter:description" content="我blog的笑容由我来守护">
 
 
 
@@ -305,7 +305,23 @@
       
 
       
-        
+        <p>我blog的笑容由我来守护<a id="more"></a></p>
+<h1 id="19-8-16出现的问题"><a href="#19-8-16出现的问题" class="headerlink" title="19.8.16出现的问题"></a>19.8.16出现的问题</h1><p>就在昨天我差点失去了我的blog</p>
+<p>我的npm打不开,启动npm就显示</p>
+<pre><code>npm: command not found</code></pre><p>所有的hexo命令都是回应</p>
+<pre><code>/c/Users/你电脑的用户名/AppData/Roaming/npm/hexo: line 12: node: command not found</code></pre><p>在网上搜索了类似的问题都是说类似是用户路径上找不到东西,要通过添加环境变量来解决</p>
+<hr>
+<p><strong>对,就是环境变量出现了问题</strong></p>
+<p>在网上高搜索结果中有向用户路径中添加一个类似NODE_PASH的东西</p>
+<p>在路径下录入C:\Users\儿子\nodejs\node_modules</p>
+<p><strong>注意</strong>    加这个是没用的</p>
+<p> ** 真正的解决方法是打开PASH,编辑新建一个.添加</p>
+<p>C:\Users\儿子\AppData\Roaming\npm\node_modules</p>
+<p>注意是找到node_module这个文件夹的位置.可以直接检索 **</p>
+<p>至于在网上都是添加</p>
+<p>C:\Users\儿子\AppData\Roaming\npm\node_modules\hexo\bin<br>这个路径到pash中,我看最高搜索量几个答案都是这样做,也正是因为他们我差点就要重搭blog了.多谢这个兄弟的答案<a href="http://https://orzno.com/2018/11/29/Hexo%E5%8D%9A%E5%AE%A2command-not-found%E6%8A%A5%E9%94%99%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="blog错误" target="_blank" rel="noopener">http://https://orzno.com/2018/11/29/Hexo%E5%8D%9A%E5%AE%A2command-not-found%E6%8A%A5%E9%94%99%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</a></p>
+<hr>
+
       
     </div>
     
@@ -338,6 +354,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/17/python的基础学习/" rel="prev" title="python的基础学习">
+                python的基础学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -389,8 +409,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -407,7 +436,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -441,6 +470,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#19-8-16出现的问题"><span class="nav-number">1.</span> <span class="nav-text">19.8.16出现的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
