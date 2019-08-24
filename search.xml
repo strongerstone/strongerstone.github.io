@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python的基础学习]]></title>
     <url>%2F2019%2F08%2F17%2Fpython%E7%9A%84%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[第一次用我决定之后都直接用powershell加上notepad++来实现python 第一个程序先写hellow world 我们命名为ex1.py 如何改到d盘有一个小问题，我们改盘直接d：就可以了之后键入 python ex1.py就可以看到运行了]]></content>
   </entry>
   <entry>
     <title><![CDATA[blog的维护]]></title>
