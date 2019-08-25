@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cc0832;
+  background: #6affff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3121,6 +3121,14 @@ pre .javascript .function {
     margin: 8px 0 0;
   }
 }
-body {
-  background: url("/images/apple.jpg");
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url("/images/apple.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+  }
+  #footer a {
+    color: #eee;
+  }
 }
