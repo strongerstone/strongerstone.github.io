@@ -309,10 +309,69 @@
       
         
           
-            <h1 id="第一次用"><a href="#第一次用" class="headerlink" title="第一次用"></a>第一次用</h1><p>我决定之后都直接用powershell加上notepad++来实现python</p>
+            <h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><p>我决定之后都直接用powershell加上notepad++来实现python</p>
 <h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>先写hellow world</p>
 <p>我们命名为ex1.py</p>
 <h3 id="如何改到d盘"><a href="#如何改到d盘" class="headerlink" title="如何改到d盘"></a>如何改到d盘</h3><p>有一个小问题，我们改盘直接d：就可以了<br>之后键入 python ex1.py<br>就可以看到运行了</p>
+<h3 id="关于错误"><a href="#关于错误" class="headerlink" title="关于错误"></a>关于错误</h3><p>要学会看懂错误，以后错误都会归入到这个最初的项目里</p>
+<p>最初我写了一个语法错误。</p>
+<p>系统会提醒你</p>
+<p>1.首先会把行号写出<br>2.会在错的地方下面画一个小三角<br>3.告诉你什么错误(Syntaxerror)语法错误</p>
+<p>indexError数据越组，可能是数据过多，可能是是数据组不够。</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>放一个#就可以了</p>
+<p>如果要多行注释就每一行放一个井号</p>
+<h2 id="数字计算"><a href="#数字计算" class="headerlink" title="数字计算"></a>数字计算</h2><p>+-*/  这便是加减乘除</p>
+<p>%取余</p>
+<p>关于大于小于，会直接返回True False</p>
+<h2 id="变量（VARIABLE）"><a href="#变量（VARIABLE）" class="headerlink" title="变量（VARIABLE）"></a>变量（VARIABLE）</h2><p>python中可以直接用来赋值不用管类型；</p>
+<p>x = 1要这样写，因为我们可以看的更轻松一点</p>
+<h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><p>可以把字符串放到一句话中，但是要用</p>
+<pre><code>pd=36
+print（f“hellow  {pd}”）</code></pre><p>这个就可以直接把变量放到语句中。</p>
+<p>如果出现这种情况，</p>
+<pre><code>a = &apos;qwe&apos;
+b = &apos;rty&apos;
+print(a+b)</code></pre><p>出现的结果应该是qwerty</p>
+<p>关于打印</p>
+<p>\n这是随时变行，<br>还有连续三个”””zheshi<br>yijv<br>hua”””</p>
+<p>这就可以直接换三行</p>
+<p>\这是一个转义字符</p>
+<p>/叫做斜杠，，，/叫做反斜杠</p>
+<h2 id="转义字符串"><a href="#转义字符串" class="headerlink" title="转义字符串"></a>转义字符串</h2><ul>
+<li>字符串连接    <blockquote>
+<blockquote>
+<blockquote>
+<p>a + b<br>‘HelloPython’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>重复输出字符串    <blockquote>
+<blockquote>
+<blockquote>
+<p>a * 2<br>‘HelloHello’<br>[]    通过索引获取字符串中字符<br>a[1]<br>‘e’<br>[ : ]    截取字符串中的一部分<br>a[1:4]<br>‘ell’<strong>//就是第一个字符和第四个字符中间的内容</strong><br>in    成员运算符 - 如果字符串中包含给定的字符返回 True<br>“H” in a<br>True<br>not in    成员运算符 - 如果字符串中不包含给定的字符返回 True<br>“M” not in a<br>True<br>r/R    原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母”r”（可以大小写）以外，与普通字符串有着几乎完全相同的语法。<br>print r’\n’<br>\n<br>print R’\n’<br>\n****</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>输出测试</p>
+<p>print默认是打印一行，结尾加换行。end=’ ‘意思是末尾不换行，加空格</p>
+<p>input（）就是录入一个字符串。注意只能录入一个。</p>
+<p>input还有一个用法就是</p>
+<pre><code>age = input (&quot;How old are you?&quot;)
+
+print(f&quot;so,you old is {age}&quot;)</code></pre><p>这是input的括号中就可以直接写一句提示的话</p>
+<h3 id="pydoc"><a href="#pydoc" class="headerlink" title="pydoc"></a>pydoc</h3><p>有一行代码</p>
+<pre><code>PS D:\py&gt; python -m pydoc ex1
+    hello world</code></pre><p>Help on module ex1:</p>
+<p>NAME<br>    ex1</p>
+<p>FILE<br>    d:\py\ex1.py</p>
+<p>直接会显示其中的内容，名字，和所在目录</p>
+<p>pydoc是python自带的一个文档生成工具，使用pydoc可以很方便的查看类和方法结构</p>
+<p>类似还有file和os这种对于文件的操作命令。</p>
 
           
         
