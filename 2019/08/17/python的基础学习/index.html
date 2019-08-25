@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="这是一个终止，又是一个开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-25T01:33:41.000Z">
+<meta property="og:updated_time" content="2019-08-25T16:34:21.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础学习">
 <meta name="twitter:description" content="这是一个终止，又是一个开始">
@@ -356,6 +356,8 @@ print(a+b)</code></pre><p>出现的结果应该是qwerty</p>
 </ul>
 <h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>输出测试</p>
 <p>print默认是打印一行，结尾加换行。end=’ ‘意思是末尾不换行，加空格</p>
+<p>这里有一个忽略的重点,input<strong>会直接把输入当做脚本来运行</strong></p>
+<p>所以类似的a,b,c,d=input()要输入”1,2,3,4”而不是1，2，3，4</p>
 <p>input（）就是录入一个字符串。注意只能录入一个。</p>
 <p>input还有一个用法就是</p>
 <pre><code>age = input (&quot;How old are you?&quot;)
@@ -369,6 +371,35 @@ print(f&quot;so,you old is {age}&quot;)</code></pre><p>这是input的括号中�
 <p>直接会显示其中的内容，名字，和所在目录</p>
 <p>pydoc是python自带的一个文档生成工具，使用pydoc可以很方便的查看类和方法结构</p>
 <p>类似还有file和os这种对于文件的操作命令。</p>
+<p>在input后，打上python -m pydoc input</p>
+<p>出现这个代码</p>
+<pre><code>Help on built-in function input in module builtins:</code></pre><p>input(prompt=None, /)<br>    Read a string from standard input.  The trailing newline is stripped.</p>
+<pre><code>The prompt string, if given, is printed to standard output without a
+trailing newline before reading input.
+
+If the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.
+On *nix systems, readline is used if available.</code></pre><p>有关内置模块的内置函数输入的帮助：</p>
+<p>输入（提示=无，/）<br>     从标准输入中读取字符串。 删除尾随换行符。</p>
+<pre><code>如果给出，则提示字符串将打印到标准输出而不显示
+在读取输入之前追踪换行符。
+
+如果用户点击EOF（* nix：Ctrl-D，Windows：Ctrl-Z + Return），则引发EOFError。
+在* nix系统上，如果可用，则使用readline。</code></pre><p>这可能是对于一条语法的解释。</p>
+<h3 id="参数，解包和变量"><a href="#参数，解包和变量" class="headerlink" title="参数，解包和变量"></a>参数，解包和变量</h3><p>脚本（script），就是你编写的py程序</p>
+<p>这里要说一下</p>
+<p>import<br>这个就相当是引用库。相当与c语言中的#include</p>
+<p>根据我的推断，py中的库应该是提前封装的，也可以叫做把sys模块引用进来。<br>argv这叫做参数变量</p>
+<p>sys.argv 就是一个从程序外部获取参数的桥梁</p>
+<p>sys.argv[0]表示当前module的名字</p>
+<p>这个保存着运行python脚本时，传递给脚本的参数。</p>
+<pre><code>from sys import argv</code></pre><p>//这个import把python的功能导入到程序中，可以理解为py在询问你你要什么功能<br>    /# read the WYSS section for how to run this<br>    script,  first,  second, third=argv<br>//这一句可以看出应该是argv[0]到4。这个过程叫做解包，自动把数值分为四份<strong>在这里script看起来好像是必备第一个就是脚本，也就是你py文件的名称</strong></p>
+<pre><code>print(&quot;the script is called:&quot;,script)
+print(&quot;Your first variable is:&quot;,first)
+print(&quot;you second variable is:&quot;,second)
+print(&quot;you third variable is:&quot;,third)</code></pre><p>当键入python ex13.py first 2nd 3rd时</p>
+<p>会出现</p>
+<p>the script is called: ex13.py<br>Your first variable is: first<br>you second variable is: 2nd<br>you third variable is: 3rd</p>
+<p><strong>从这里就可以看出argv</strong><br>是吸收了你键入的东西。<br>argv 和 input() 之间的区别是什么？ 区别取决于用户在哪被要求输入，如果是在命令行，就用 argv。如果你想让它们在程序已经运行的情况下用键盘输入，那就用 input() 。</p>
 
       
     </div>
@@ -524,7 +555,7 @@ print(f&quot;so,you old is {age}&quot;)</code></pre><p>这是input的括号中�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.6.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.6.2.</span> <span class="nav-text">pydoc</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.6.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.6.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.6.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
