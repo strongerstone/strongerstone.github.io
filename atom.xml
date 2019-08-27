@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-26T00:26:20.250Z</updated>
+  <updated>2019-08-27T14:54:49.677Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>兄弟我对不起你</title>
-    <link href="http://yoursite.com/2019/08/26/%E5%85%84%E5%BC%9F%E6%88%91%E5%AF%B9%E4%B8%8D%E8%B5%B7%E4%BD%A0/"/>
-    <id>http://yoursite.com/2019/08/26/兄弟我对不起你/</id>
-    <published>2019-08-26T00:26:20.000Z</published>
-    <updated>2019-08-26T00:26:20.250Z</updated>
+    <title>这件事情我不做不行啊</title>
+    <link href="http://yoursite.com/2019/08/27/%E8%BF%99%E4%BB%B6%E4%BA%8B%E6%83%85%E6%88%91%E4%B8%8D%E5%81%9A%E4%B8%8D%E8%A1%8C%E5%95%8A/"/>
+    <id>http://yoursite.com/2019/08/27/这件事情我不做不行啊/</id>
+    <published>2019-08-27T14:33:12.000Z</published>
+    <updated>2019-08-27T14:54:49.677Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;恭喜你呀
     
     </summary>
     
@@ -35,7 +37,7 @@
     <link href="http://yoursite.com/2019/08/17/python%E7%9A%84%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2019/08/17/python的基础学习/</id>
     <published>2019-08-17T07:47:12.000Z</published>
-    <updated>2019-08-25T16:34:21.091Z</updated>
+    <updated>2019-08-27T14:54:53.222Z</updated>
     
     <summary type="html">
     

@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="这是一个终止，又是一个开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-25T16:34:21.091Z">
+<meta property="og:updated_time" content="2019-08-27T14:54:53.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础学习">
 <meta name="twitter:description" content="这是一个终止，又是一个开始">
@@ -352,9 +352,8 @@ print(a+b)</code></pre><p>出现的结果应该是qwerty</p>
 </blockquote>
 </blockquote>
 </blockquote>
-</li>
+<h2 id="py的输入"><a href="#py的输入" class="headerlink" title="py的输入"></a>py的输入</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3>输出测试</li>
 </ul>
-<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>输出测试</p>
 <p>print默认是打印一行，结尾加换行。end=’ ‘意思是末尾不换行，加空格</p>
 <p>这里有一个忽略的重点,input<strong>会直接把输入当做脚本来运行</strong></p>
 <p>所以类似的a,b,c,d=input()要输入”1,2,3,4”而不是1，2，3，4</p>
@@ -391,6 +390,7 @@ On *nix systems, readline is used if available.</code></pre><p>有关内置模�
 <p>根据我的推断，py中的库应该是提前封装的，也可以叫做把sys模块引用进来。<br>argv这叫做参数变量</p>
 <p>sys.argv 就是一个从程序外部获取参数的桥梁</p>
 <p>sys.argv[0]表示当前module的名字</p>
+<p><strong>from sys import argv.这句话的意思是sys是一个软件包，这句话的意思是从sys这个软件包中取出argv这个特性</strong></p>
 <p>这个保存着运行python脚本时，传递给脚本的参数。</p>
 <pre><code>from sys import argv</code></pre><p>//这个import把python的功能导入到程序中，可以理解为py在询问你你要什么功能<br>    /# read the WYSS section for how to run this<br>    script,  first,  second, third=argv<br>//这一句可以看出应该是argv[0]到4。这个过程叫做解包，自动把数值分为四份<strong>在这里script看起来好像是必备第一个就是脚本，也就是你py文件的名称</strong></p>
 <pre><code>print(&quot;the script is called:&quot;,script)
@@ -399,7 +399,80 @@ print(&quot;you second variable is:&quot;,second)
 print(&quot;you third variable is:&quot;,third)</code></pre><p>当键入python ex13.py first 2nd 3rd时</p>
 <p>会出现</p>
 <p>the script is called: ex13.py<br>Your first variable is: first<br>you second variable is: 2nd<br>you third variable is: 3rd</p>
-<p><strong>从这里就可以看出argv</strong><br>是吸收了你键入的东西。<br>argv 和 input() 之间的区别是什么？ 区别取决于用户在哪被要求输入，如果是在命令行，就用 argv。如果你想让它们在程序已经运行的情况下用键盘输入，那就用 input() 。</p>
+<p><strong>从这里就可以看出argv</strong><br>是吸收了你键入的东西。<br>argv 和 input() 之间的区别是什么？ 区别取决于用户在哪被要求输入，如果是在命令行，就用 argv。如果你想让它们在程序已经运行的情况下用键盘输入，那就用 input() 。就是argv要一开始运行的时候就要输入。而input</p>
+<p>而input可以设置封装提示符</p>
+<pre><code>from sys import argv
+
+script,user_name=argv
+prompt=&apos;&gt;&gt;&gt;&apos;
+
+print(f&quot;Hi {user_name},I`m the {script}script&quot;)
+print(&quot;I`d like to ask you a few questions.&quot;)
+print(f&quot;Do you like your {user_name}?&quot;)
+likes = input(prompt)
+
+print(f&quot;Where do you live {user_name}?&quot;)
+lives = input(prompt)
+
+print(&quot;What kind of computer do you have?&quot;)
+computer = input(prompt)
+
+print(f&quot;&quot;&quot;
+Alright,so you said {likes} about like me.
+You live in {lives}. Not sure where that is.
+And you have a {computer} computer.Nice.
+&quot;&quot;&quot;) </code></pre><p>像这样就会在问题的时候出现</p>
+<p>PS D:\py&gt; python ex14.py zhangyifang<br>Hi zhangyifang,I<code>m the ex14.pyscript
+I</code>d like to ask you a few questions.<br>Do you like your zhangyifang?</p>
+<blockquote>
+<p>Yes<br>Where do you live zhangyifang?<br>taikang<br>What kind of computer do you have?<br>legion</p>
+</blockquote>
+<p>Alright,so you said Yes about like me.<br>You live in taikang. Not sure where that is.<br>And you have a legion computer.Nice.</p>
+<p>PS D:\py&gt; python ex14.py zhangyifang<br>Hi zhangyifang,I<code>m the ex14.pyscript
+I</code>d like to ask you a few questions.<br>Do you like your zhangyifang?</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>yes<br>Where do you live zhangyifang?<br>taikang<br>What kind of computer do you have?<br>mac</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Alright,so you said yes about like me.<br>You live in taikang. Not sure where that is.<br>And you have a mac computer.Nice.</p>
+<p>如果要改的话，直接改pr那个就可以全改。</p>
+<h2 id="py与文件"><a href="#py与文件" class="headerlink" title="py与文件"></a>py与文件</h2><h3 id="文件的读取"><a href="#文件的读取" class="headerlink" title="文件的读取"></a>文件的读取</h3><pre><code>from sys import argv //
+
+script,filename = argv
+
+txt = open(filename)
+
+print(f&quot;Here&apos;s your file {filename}:&quot;)
+print(txt.read())</code></pre><hr>
+<pre><code>print(&quot;Type the filename again:&quot;)
+file_again = input(&quot;&gt; &quot;)
+
+txt_again = open(file_again)
+
+print(txt_again.read())</code></pre><p>这是我们可以看作如何在powershell中直接读取文件。</p>
+<p>我们的运行结果为<br>PS D:\py&gt; python ex15.py ex15_sample.txt<br>Here’s your file ex15_sample.txt:<br>This is stuff I typed into a file.<br>It is really cool stuff.<br>Type the filename again:</p>
+<blockquote>
+<p>ex15_sample.txt<br>This is stuff I typed into a file.<br>It is really cool stuff.</p>
+</blockquote>
+<p>上述分割线可以看作两种读取文件的方式</p>
+<p>txt = open(filename)<br>可以理解为，直接解码打开一个txt文本。<br>而下一行的print(txt.read())直接的把文件的内容打到显示屏上。</p>
+<blockquote>
+<p>这里有一个问题，txt并不是固定的可以换成任何的东西</p>
+</blockquote>
+<blockquote>
+<p>注 这里文件名必须当作参数录入进去，直接写不生效。</p>
+</blockquote>
+<h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><p>close - 关闭文件，就像编辑器中的 “文件-&gt;另存为”一样。</p>
+<p>如果不写就不会保存</p>
+<p>read - 读取文件内容。你可以把读取结果赋给一个变量。</p>
+<p>readline - 只读取文本文件的一行内容。</p>
+<p>truncate - 清空文件。清空的时候要当心。</p>
+<p>write(‘stuff’) - 给文件写入一些“东西”。</p>
+<p>向题头文件中写入‘stuff’</p>
+<p>seek(0) - 把读/写的位置移到文件最开头</p>
 
       
     </div>
@@ -434,8 +507,8 @@ print(&quot;you third variable is:&quot;,third)</code></pre><p>当键入python e
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/26/兄弟我对不起你/" rel="prev" title="兄弟我对不起你">
-                兄弟我对不起你 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/27/这件事情我不做不行啊/" rel="prev" title="这件事情我不做不行啊">
+                这件事情我不做不行啊 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,7 +632,7 @@ print(&quot;you third variable is:&quot;,third)</code></pre><p>当键入python e
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.6.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.6.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.6.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py的输入"><span class="nav-number">1.7.</span> <span class="nav-text">py的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.7.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.7.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py与文件"><span class="nav-number">1.8.</span> <span class="nav-text">py与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的操作"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件的操作</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
