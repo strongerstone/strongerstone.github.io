@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="这是一个终止，又是一个开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-27T14:54:53.222Z">
+<meta property="og:updated_time" content="2019-08-30T08:44:07.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础学习">
 <meta name="twitter:description" content="这是一个终止，又是一个开始">
@@ -473,6 +473,40 @@ print(txt_again.read())</code></pre><p>这是我们可以看作如何在powershe
 <p>write(‘stuff’) - 给文件写入一些“东西”。</p>
 <p>向题头文件中写入‘stuff’</p>
 <p>seek(0) - 把读/写的位置移到文件最开头</p>
+<pre><code>from sys import argv
+
+script,filename = argv
+
+print(f&quot;we are going to erase {filename}.&quot;)
+print(&quot;If you don&apos;t want that,hit CTRL-C (^C)&quot;)
+print(&quot;If you want that,hit RETURN.&quot;)
+
+input(&quot;?&quot;)
+
+print (&quot;Opening the file...&quot;)
+target = open(filename, &apos;w&apos;)  //这里以写入的方式打开了一个文件。（在w的地方，r代表只读，a代表追加）
+
+print (&quot;Truncating the file.  Goodbye!&quot;)
+target.truncate()//这个单词是删除的意思（清空文件）
+
+print(&quot;Now I&apos;m going to ask you for three lines.&quot;)
+
+line1 = input(&quot;line 1: &quot;)
+line2 = input(&quot;line 2: &quot;)
+line3 = input(&quot;line 3: &quot;)
+
+print(&quot;I&apos;m going to write these to the file.&quot;)
+
+target.write(line1)
+target.write(&quot;\n&quot;)
+target.write(line2)
+target.write(&quot;\n&quot;)
+target.write(line3)
+target.write(&quot;\n&quot;)
+
+print(&quot;And finally，we close it.&quot;)
+target.close()</code></pre><p>这是关于文件的一些操作，最后不要忘了close。要不然不会保存。<br>注意，如果只以open（filename）,那就是以只读的方式打开。</p>
+<p>我们当然也可以以只读形式打开之后在进行赋值</p>
 
       
     </div>
@@ -588,7 +622,7 @@ print(txt_again.read())</code></pre><p>这是我们可以看作如何在powershe
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

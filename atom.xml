@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-27T14:54:49.677Z</updated>
+  <updated>2019-08-30T08:44:07.905Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python的导入命令</title>
+    <link href="http://yoursite.com/2019/08/30/python%E7%9A%84%E5%AF%BC%E5%85%A5%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2019/08/30/python的导入命令/</id>
+    <published>2019-08-30T08:25:00.000Z</published>
+    <updated>2019-08-30T08:44:07.905Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了代码不臃肿，从软件包取出特性，通过输入参数来实现命令。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>命令行</title>
+    <link href="http://yoursite.com/2019/08/30/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <id>http://yoursite.com/2019/08/30/命令行/</id>
+    <published>2019-08-30T08:16:25.000Z</published>
+    <updated>2019-08-30T08:44:07.905Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;命令行在什么地方都很有用，随时记录一下
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>这件事情我不做不行啊</title>
@@ -37,7 +69,7 @@
     <link href="http://yoursite.com/2019/08/17/python%E7%9A%84%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2019/08/17/python的基础学习/</id>
     <published>2019-08-17T07:47:12.000Z</published>
-    <updated>2019-08-27T14:54:53.222Z</updated>
+    <updated>2019-08-30T08:44:07.904Z</updated>
     
     <summary type="html">
     
