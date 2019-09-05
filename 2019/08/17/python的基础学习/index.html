@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="这是一个终止，又是一个开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-30T15:11:49.270Z">
+<meta property="og:updated_time" content="2019-09-02T11:47:28.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础学习">
 <meta name="twitter:description" content="这是一个终止，又是一个开始">
@@ -531,7 +531,104 @@ print_none()</code></pre><p><strong>这是以后一直都要注意的问题</str
 <p>要么就像第二种函数中的那样，直接把变量名写到函数中，直接进行赋值</p>
 <p>注意最后一个，可以直接打印一句话。</p>
 <p>这里还有一个重点</p>
-<h2 id="函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><a href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值" class="headerlink" title="函数里的数值和脚本里的数值没有关系，可以多次进行赋值"></a>函数里的数值和脚本里的数值没有关系，可以多次进行赋值</h2>
+<h2 id="函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><a href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值" class="headerlink" title="函数里的数值和脚本里的数值没有关系，可以多次进行赋值"></a>函数里的数值和脚本里的数值没有关系，可以多次进行赋值</h2><h3 id="函数与文件的关系"><a href="#函数与文件的关系" class="headerlink" title="函数与文件的关系"></a>函数与文件的关系</h3><pre><code>from sys import argv
+
+script, input_file = argv
+
+def print_all(f):
+    print(f.read())</code></pre><p>/#在这里注意一下，这里是让嗨，f文件，执行你的read命令，无需任何参数。而把这里的read改成write会报错（Traceback (most recent call last):<br>  File “ex20.py”, line 18, in <module><br>    print_all(current_file)<br>  File “ex20.py”, line 6, in print_all<br>    print(f.write())<br>TypeError: write() takes exactly one argument (0 given<br>当然这里又出了一个问题，我的文件被覆盖了在这里查了东西</module></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(‘a.txt’, ‘r’)<br>f.read(5)<br>‘hello’<br>read( )是读文件的方法，括号内填入要读取的字符数，这里填写的字符数是5，如果填写的是1那么输出的就应该是‘h’。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>打开文件文件读取还有一些常用到的技巧方法，像下边这两种：<br>1、read( )：表示读取全部内容）</p>
+<pre><code>def rewind(f):
+    f.seek(0)</code></pre><p># 这是把写入的东西回到头 </p>
+<pre><code>def print_a_line(line_count,f):
+    print(line_count,f.readline())
+
+current_file = open(input_file)</code></pre><p># 这里是脚本的开始，先创造了“当前的文件”</p>
+<pre><code>print (&quot;First let&apos;s print the whole file:\n&quot;)
+
+print_all(current_file)</code></pre><p>#把这个文件用只读形式打开</p>
+<pre><code>print(&quot;Now let&apos;s rewind, kind of like a tape.&quot;)
+
+rewind (current_file)
+
+print(&quot;let&apos;s print three line:&quot;)
+
+current_line = 1
+print_a_line(current_line,current_file)
+
+current_line = current_line + 1
+print_a_line(current_line,current_file)
+
+current_line = current_line + 1
+print_a_line(current_line,current_file)</code></pre><p>我这个test.txt中是有内容的<br>（在这里报一个错，我原本文件中由于渲染问题有两个未知字符导致报错UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xff in position 0: illegal multibyte sequence。后来把那两个字符上删除就好了）</p>
+<p>这是运行结果<br>PS D:\py&gt; python ex20.py test.txt<br>First let’s print the whole file:</p>
+<p>This is a beautiful girl<br>She make me crasy<br>blue eyes</p>
+<p>Now let’s rewind, kind of like a tape.<br>let’s print three line:<br>1 This is a beautiful girl</p>
+<p>2 She make me crasy</p>
+<p>3 blue eyes</p>
+<p><strong>重点强调</strong><br>4.1.mode：文件打开的模式。有如下几种模式<br>‘r’： 以只读模式打开（缺省模式）（必须保证文件存在）<br>‘w’：以只写模式打开。若文件存在，则会自动清空文件，然后重新创建；若文件不存在，则新建文件。使用这个模式必须要保证文件所在目录存在，文件可以不存在。该模式下不能使用read<em>()方法<br>‘a’：以追加模式打开。若文件存在，则会追加到文件的末尾；若文件不存在，则新建文件。该模式不能使用read</em>()方法。</p>
+<p>下面四个模式要和上面的模式组合使用<br>‘b’：以二进制模式打开<br>‘t’： 以文本模式打开（缺省模式）<br>‘+’：以读写模式打开<br>‘U’：以通用换行符模式打开</p>
+<p>常见的mode组合<br>‘r’或’rt’：     默认模式，文本读模式<br>‘w’或’wt’：  以文本写模式打开（打开前文件会被清空）<br>‘rb’：          以二进制读模式打开<br>‘ab’：         以二进制追加模式打开<br>‘wb’：        以二进制写模式打开（打开前文件会被清空）<br>‘r+’：         以文本读写模式打开，可以写到文件任何位置；默认写的指针开始指在文件开头, 因此会覆写文件<br>‘w+’：        以文本读写模式打开（打开前文件会被清空）。可以使用read<em>()<br>‘a+’：        以文本读写模式打开（写只能写在文件末尾）。可以使用read</em>()<br>‘rb+’：       以二进制读写模式打开<br>‘wb+’：     以二进制读写模式打开（打开前文件会被清空）<br>‘ab+’：      以二进制读写模式打开</p>
+<p>如果用“w”的形式打开文件，如果文件存在的话，文件会被清空。</p>
+<hr>
+<p>在代码中的f代表的是，文件</p>
+<p>readline  逐行读取\n为止</p>
+<p>函数还可以进行简单的计算和返回参数</p>
+<p>可以用return</p>
+<p>例如<br>    def add(a,b):<br>        print(f”ADDING {a}+{b}”)<br>        return a+b<br>    age = add(30,5)</p>
+<p>这就可以返回数值还会显示</p>
+<p><em>ADDING 30 + 5</em></p>
+<p>对于字符串，字符节，字符编码，这部分我可能以后再说</p>
+<p>在这里要注意一下，py的注释是写在代码的下方的</p>
+<p>在这里普及一下英语知识formule(式),format(公式)，jars（罐子），bean（豆子），crate（箱）</p>
+<p>喜提，这里又出现了def后面不加tab导致参数无法实现的问题。</p>
+<pre><code>pirnt(&quot;Let&apos;s practice everything.&quot;)
+print(&apos;You\&apos;need to know \&apos;bout escapes with \\ thats     do:&apos; )
+print(&apos;\n newlines and \t tabs.&apos;)
+
+poem = &quot;&quot;&quot;
+\tThe lovely world
+with logic so firmly planted
+cannot discern \n the needs of love 
+nor comprehend passion from intuition
+and requires an explanation
+\n\t\twhere there is none.
+&quot;&quot;&quot;
+
+print(&quot;-------------------&quot;)
+print(poem)
+print(&quot;-------------------&quot;)
+
+
+five = 10-2+3-6
+print(f&quot;this should be five:{five}&quot;)
+
+def secret_formula(started):
+    jelly_beans =  started * 500
+    jars = jelly_beans / 1000
+    crates = jars/100
+    return jelly_beans,jars,crates
+
+
+    start_point = 10000
+    beans,jars,crates = secret_formula(start_point)
+print(&quot;With a starting point of:{}&quot;.format(start_point))
+
+print(f&quot;We&apos;d have {} beans, {} jars,and {} crates.&quot;.format    (*formule))    </code></pre><p>这是响应结果</p>
+<p>PS D:\py&gt; python ex24.py<br>Let’s practice everything.<br>You’need to know ‘bout escapes with \ thats do:</p>
+<h2 id="newlines-and-tabs"><a href="#newlines-and-tabs" class="headerlink" title=" newlines and    tabs."></a> newlines and    tabs.</h2><pre><code>The lovely world</code></pre><p>with logic so firmly planted<br>cannot discern<br> the needs of love<br>nor comprehend passion from intuition<br>and requires an explanation</p>
+<pre><code>where there is none.</code></pre><hr>
+<p>this should be five:5<br>With a starting point of:10000<br>We’d have 5000000 beans, 5000.0 jars,and 50.0 crates.<br>We can also do that this way:<br>We’d have 500000.0 beans, 500.0 jars, and 5.0 crates.<br>PS D:\py&gt;</p>
+
       
     </div>
     
@@ -690,7 +787,7 @@ print_none()</code></pre><p><strong>这是以后一直都要注意的问题</str
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py的输入"><span class="nav-number">1.7.</span> <span class="nav-text">py的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.7.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.7.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py与文件"><span class="nav-number">1.8.</span> <span class="nav-text">py与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的操作"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里的代码就像脚本里的argv"><span class="nav-number">3.</span> <span class="nav-text">这里的代码就像脚本里的argv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达的另一种方式"><span class="nav-number">4.</span> <span class="nav-text">表达的另一种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里是只取用一个值"><span class="nav-number">5.</span> <span class="nav-text">这里是只取用一个值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里不取得值"><span class="nav-number">6.</span> <span class="nav-text">这里不取得值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，"><span class="nav-number">6.1.</span> <span class="nav-text">上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><span class="nav-number">6.2.</span> <span class="nav-text">函数里的数值和脚本里的数值没有关系，可以多次进行赋值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py的输入"><span class="nav-number">1.7.</span> <span class="nav-text">py的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.7.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.7.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py与文件"><span class="nav-number">1.8.</span> <span class="nav-text">py与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的操作"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里的代码就像脚本里的argv"><span class="nav-number">3.</span> <span class="nav-text">这里的代码就像脚本里的argv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达的另一种方式"><span class="nav-number">4.</span> <span class="nav-text">表达的另一种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里是只取用一个值"><span class="nav-number">5.</span> <span class="nav-text">这里是只取用一个值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里不取得值"><span class="nav-number">6.</span> <span class="nav-text">这里不取得值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，"><span class="nav-number">6.1.</span> <span class="nav-text">上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><span class="nav-number">6.2.</span> <span class="nav-text">函数里的数值和脚本里的数值没有关系，可以多次进行赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数与文件的关系"><span class="nav-number">6.2.1.</span> <span class="nav-text">函数与文件的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#newlines-and-tabs"><span class="nav-number">6.3.</span> <span class="nav-text"> newlines and    tabs.</span></a></li></ol></li></ol></div>
             
 
           </div>
