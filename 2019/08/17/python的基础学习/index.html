@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="张一方的个人博客">
 <meta property="og:description" content="这是一个终止，又是一个开始">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T11:47:28.872Z">
+<meta property="og:updated_time" content="2019-09-20T08:59:10.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的基础学习">
 <meta name="twitter:description" content="这是一个终止，又是一个开始">
@@ -317,6 +317,7 @@
 <p>indexError数据越组，可能是数据过多，可能是是数据组不够。</p>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>放一个#就可以了</p>
 <p>如果要多行注释就每一行放一个井号</p>
+<p>从此以后我看之前的博客就用\来作为之后学习的标记</p>
 <h2 id="数字计算"><a href="#数字计算" class="headerlink" title="数字计算"></a>数字计算</h2><p>+-*/  这便是加减乘除</p>
 <p>%取余</p>
 <p>关于大于小于，会直接返回True False</p>
@@ -324,7 +325,8 @@
 <p>x = 1要这样写，因为我们可以看的更轻松一点</p>
 <h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><p>可以把字符串放到一句话中，但是要用</p>
 <pre><code>pd=36
-print（f“hellow  {pd}”）</code></pre><p>这个就可以直接把变量放到语句中。</p>
+print（f“hellow  {pd}”）</code></pre><p>//这种形式就是把把字符串放在一句话之中</p>
+<p>这个就可以直接把变量放到语句中。</p>
 <p>如果出现这种情况，</p>
 <pre><code>a = &apos;qwe&apos;
 b = &apos;rty&apos;
@@ -628,7 +630,32 @@ print(f&quot;We&apos;d have {} beans, {} jars,and {} crates.&quot;.format    (*f
 <h2 id="newlines-and-tabs"><a href="#newlines-and-tabs" class="headerlink" title=" newlines and    tabs."></a> newlines and    tabs.</h2><pre><code>The lovely world</code></pre><p>with logic so firmly planted<br>cannot discern<br> the needs of love<br>nor comprehend passion from intuition<br>and requires an explanation</p>
 <pre><code>where there is none.</code></pre><hr>
 <p>this should be five:5<br>With a starting point of:10000<br>We’d have 5000000 beans, 5000.0 jars,and 50.0 crates.<br>We can also do that this way:<br>We’d have 500000.0 beans, 500.0 jars, and 5.0 crates.<br>PS D:\py&gt;</p>
+<hr>
+<hr>
+<hr>
+<p>我打算从新开始</p>
+<h1 id="第一天初始"><a href="#第一天初始" class="headerlink" title="第一天初始"></a>第一天初始</h1><h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><p>目前Python在云基础设施、DevOps、网络爬虫开发、数据分析挖掘、机器学习等领域都有着广泛的应用，因此也产生了服务器开发、数据接口开发、自动化运维、科学计算和数据可视化、聊天机器人开发、图像识别和处理等一系列的职位。</p>
+<h2 id="一句话"><a href="#一句话" class="headerlink" title="一句话"></a>一句话</h2><p>导入这个</p>
+<p>美丽胜过丑陋。<br>显式优于隐式。<br>简单比复杂更好。<br>复杂比复杂更好。<br>Flat优于嵌套。<br>稀疏优于密集。<br>可读性很重要。<br>特殊情况不足以打破规则。<br>虽然实用性胜过纯洁。<br>错误不应该默默地传递。<br>除非明确沉默。<br>面对模棱两可，拒绝猜测的诱惑。<br>应该有一个 - 最好只有一个 - 明显的方法来做到这一点。<br>虽然这种方式起初可能并不明显，除非你是荷兰人。<br>现在比永远好。<br>虽然现在永远不会比*正确好。<br>如果实施很难解释，这是一个坏主意。<br>如果实现很容易解释，那可能是个好主意。<br>命名空间是一个很棒的主意 - 让我们做更多的事情吧！</p>
+<h2 id="现在是第一天的第一颗"><a href="#现在是第一天的第一颗" class="headerlink" title="现在是第一天的第一颗"></a>现在是第一天的第一颗</h2><h3 id="海龟制图turtle"><a href="#海龟制图turtle" class="headerlink" title="海龟制图turtle"></a>海龟制图turtle</h3><p>有一只机器海龟起始位置在xoy平面上的（0.0）点<br>先执行代码</p>
+<pre><code>import turtle
+turtle.forward(15)
+turtle.right(25)</code></pre><p>他会向前15个像素，接着向右转25度，会画出一条线段来。这个东西是没有后续操作的，都要在没有反馈的情况下直接写入。</p>
+<p>turtlescreen就是运动场。</p>
+<p>海龟动作<br>移动和绘制<br>forward() | fd() 前进<br>backward() | bk() | back() 后退<br>在（）中应该为行进的长度</p>
+<p>right() | rt() 右转<br>left() | lt() 左转</p>
+<p>其中是角度如果想调成弧度认为角度，可通过 degrees() 和 radians() 函数改变设置</p>
+<p>goto() | setpos() | setposition() 前往/定位<br>setx() 设置x坐标<br>sety() 设置y坐标<br>setheading() | seth() 设置朝向<br>这里就是设置坐标</p>
+<p>home() 返回原点<br>circle() 画圆<strong>中间要写上半径</strong><br>如果要写（120，180）那就是转动180度类似于半圆的弧线</p>
+<p>dot() 画点<br>stamp() 印章<br>clearstamp() 清除印章<br>clearstamps() 清除多个印章<br>undo() 撤消<br>speed() 速度<br>获取海龟的状态<br>position() | pos() 位置<br>towards() 目标方向<br>xcor() x坐标<br>ycor() y坐标<br>heading() 朝向<br>distance() 距离<br>设置与度量单位<br>degrees() 角度<br>radians() 弧度<br>画笔控制<br>绘图状态<br>pendown() | pd() | down() 画笔落下<br>penup() | pu() | up() 画笔抬起<br>pensize() | width() 画笔粗细<br>pen() 画笔<br>isdown() 画笔是否落下<br>颜色控制<br>color() 颜色<br>pencolor() 画笔颜色<br>fillcolor() 填充颜色<br>填充<br>filling() 是否填充<br>begin_fill() 开始填充<br>end_fill() 结束填充<br>更多绘图控制<br>reset() 重置<br>clear() 清空<br>write() 书写<br>画笔控制<br>绘图状态<br>turtle.pendown()<br>turtle.pd()<br>turtle.down()<br>画笔落下 – 移动时将画线。</p>
+<p>turtle.penup()<br>turtle.pu()<br>turtle.up()<br>画笔抬起 – 移动时不画线。</p>
+<p>turtle.pensize(width=None)¶<br>turtle.width(width=None)</p>
+<p>海龟状态<br>可见性<br>showturtle() | st() 显示海龟<br>hideturtle() | ht() 隐藏海龟<br>isvisible() 是否可见<br>外观<br>shape() 形状<br>resizemode() 大小调整模式<br>shapesize() | turtlesize() 形状大小<br>shearfactor() 剪切因子<br>settiltangle() 设置倾角<br>tiltangle() 倾角<br>tilt() 倾斜<br>shapetransform() 变形<br>get_shapepoly() 获取形状多边形<br>这是基本操作，具体操作在<a href="https://docs.python.org/zh-cn/3/library/turtle.html这个网址中" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3/library/turtle.html这个网址中</a></p>
+<p>turtle.mainloop()<br>注意这句话，他可以让窗口停留一段时间</p>
+<p>最开始的时候写上from turtle import*就是从turtle中取出功能</p>
+<h3 id="关于hellow-world"><a href="#关于hellow-world" class="headerlink" title="关于hellow world"></a>关于hellow world</h3><pre><code>end=&apos;&apos;   不用换行，可以在引号中写入用什么结尾
 
+sep=&apos;&apos;  这个是中间间隔用什么</code></pre>
       
     </div>
     
@@ -743,7 +770,7 @@ print(f&quot;We&apos;d have {} beans, {} jars,and {} crates.&quot;.format    (*f
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -787,7 +814,7 @@ print(f&quot;We&apos;d have {} beans, {} jars,and {} crates.&quot;.format    (*f
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py的输入"><span class="nav-number">1.7.</span> <span class="nav-text">py的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.7.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.7.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py与文件"><span class="nav-number">1.8.</span> <span class="nav-text">py与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的操作"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里的代码就像脚本里的argv"><span class="nav-number">3.</span> <span class="nav-text">这里的代码就像脚本里的argv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达的另一种方式"><span class="nav-number">4.</span> <span class="nav-text">表达的另一种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里是只取用一个值"><span class="nav-number">5.</span> <span class="nav-text">这里是只取用一个值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里不取得值"><span class="nav-number">6.</span> <span class="nav-text">这里不取得值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，"><span class="nav-number">6.1.</span> <span class="nav-text">上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><span class="nav-number">6.2.</span> <span class="nav-text">函数里的数值和脚本里的数值没有关系，可以多次进行赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数与文件的关系"><span class="nav-number">6.2.1.</span> <span class="nav-text">函数与文件的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#newlines-and-tabs"><span class="nav-number">6.3.</span> <span class="nav-text"> newlines and    tabs.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个程序"><span class="nav-number">1.1.</span> <span class="nav-text">第一个程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何改到d盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何改到d盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字计算"><span class="nav-number">1.3.</span> <span class="nav-text">数字计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量（VARIABLE）"><span class="nav-number">1.4.</span> <span class="nav-text">变量（VARIABLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">1.5.</span> <span class="nav-text">格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符串"><span class="nav-number">1.6.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py的输入"><span class="nav-number">1.7.</span> <span class="nav-text">py的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.7.1.</span> <span class="nav-text">input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydoc"><span class="nav-number">1.7.2.</span> <span class="nav-text">pydoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数，解包和变量"><span class="nav-number">1.7.3.</span> <span class="nav-text">参数，解包和变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#py与文件"><span class="nav-number">1.8.</span> <span class="nav-text">py与文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的操作"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里的代码就像脚本里的argv"><span class="nav-number">3.</span> <span class="nav-text">这里的代码就像脚本里的argv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达的另一种方式"><span class="nav-number">4.</span> <span class="nav-text">表达的另一种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里是只取用一个值"><span class="nav-number">5.</span> <span class="nav-text">这里是只取用一个值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这里不取得值"><span class="nav-number">6.</span> <span class="nav-text">这里不取得值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，"><span class="nav-number">6.1.</span> <span class="nav-text">上面这个代码是有问题的所有的调用函数由于没有控制缩进，都包含到最后一个函数中，这样子代码就会没有相应，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数里的数值和脚本里的数值没有关系，可以多次进行赋值"><span class="nav-number">6.2.</span> <span class="nav-text">函数里的数值和脚本里的数值没有关系，可以多次进行赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数与文件的关系"><span class="nav-number">6.2.1.</span> <span class="nav-text">函数与文件的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#newlines-and-tabs"><span class="nav-number">6.3.</span> <span class="nav-text"> newlines and    tabs.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一天初始"><span class="nav-number">7.</span> <span class="nav-text">第一天初始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用领域"><span class="nav-number">7.1.</span> <span class="nav-text">应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话"><span class="nav-number">7.2.</span> <span class="nav-text">一句话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现在是第一天的第一颗"><span class="nav-number">7.3.</span> <span class="nav-text">现在是第一天的第一颗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#海龟制图turtle"><span class="nav-number">7.3.1.</span> <span class="nav-text">海龟制图turtle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于hellow-world"><span class="nav-number">7.3.2.</span> <span class="nav-text">关于hellow world</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
