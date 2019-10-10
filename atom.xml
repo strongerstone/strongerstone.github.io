@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>张一方的个人博客</title>
   
-  <subtitle>面对一地鸡毛仍然勇敢，才是王道</subtitle>
+  <subtitle>这里有很多东西，有情感，有学习，还有生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-27T14:29:17.189Z</updated>
+  <updated>2019-10-10T07:58:14.035Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java学习与作业</title>
+    <link href="http://yoursite.com/2019/10/10/java%E5%AD%A6%E4%B9%A0%E4%B8%8E%E4%BD%9C%E4%B8%9A/"/>
+    <id>http://yoursite.com/2019/10/10/java学习与作业/</id>
+    <published>2019-10-10T07:58:13.000Z</published>
+    <updated>2019-10-10T07:58:14.035Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>百日计划</title>
@@ -37,7 +51,7 @@
     <link href="http://yoursite.com/2019/09/17/%E8%AE%B0%E4%BA%8B%E6%9C%AC/"/>
     <id>http://yoursite.com/2019/09/17/记事本/</id>
     <published>2019-09-17T12:27:09.000Z</published>
-    <updated>2019-09-27T14:38:15.147Z</updated>
+    <updated>2019-10-07T06:36:41.652Z</updated>
     
     <summary type="html">
     
